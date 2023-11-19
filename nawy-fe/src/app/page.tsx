@@ -1,95 +1,61 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
+"use client";
+import ApartmentCard from "@/components/AppartmentCard";
+import { Button, Col, Row, Space, Table } from "antd";
+import { Apartment } from "@/interfaces/apartment";
 export default function Home() {
+  const dataSource: Apartment[] = [
+    {
+      id: "1",
+      name: "Spacious Downtown Apartment",
+      description: "Modern apartment in the heart of the city",
+      location: "Downtown, City",
+      price: 1500,
+      bedrooms: 2,
+      bathrooms: 1,
+      size: 1000,
+      amenities: ["Swimming pool", "Gym", "Parking"],
+      photos: [
+        "https://www.nawy.com/assets/icons/common/nawy.svg",
+        "https://www.nawy.com/assets/icons/common/nawy.svg",
+      ],
+      available: true,
+    },
+    {
+      id: "2",
+      name: "Cozy Suburban Flat",
+      description: "Quiet and cozy flat in a suburban neighborhood",
+      location: "Suburb, Town",
+      price: 1200,
+      bedrooms: 1,
+      bathrooms: 1,
+      size: 800,
+      amenities: ["Garden", "Pet-friendly"],
+      photos: [
+        "https://www.nawy.com/assets/icons/common/nawy.svg",
+        "https://www.nawy.com/assets/icons/common/nawy.svg",
+      ],
+      available: true,
+    },
+  ];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div className="App">
+      <Row>
+        <Col span={24}>
+          <div style={{ textAlign: "center" }}>
+            <Space align="center">
+              <h1>Nawy SDE Assignment</h1>
+            </Space>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+            <Col span={8}>
+              <ApartmentCard
+                apartment={dataSource[0]}
+              ></ApartmentCard>
+            </Col>
+      </Row>
+    </div>
+  );
 }
