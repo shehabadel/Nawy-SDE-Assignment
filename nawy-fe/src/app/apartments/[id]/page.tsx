@@ -14,7 +14,6 @@ export default function Page({ params }: { params: { id: string } }) {
       if (response.status !== 200) {
         setIsError(true);
       } else {
-        console.log(response.data)
         setApartment(response.data);
       }
       setIsLoading(false)

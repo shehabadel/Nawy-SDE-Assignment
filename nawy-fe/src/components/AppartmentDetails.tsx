@@ -19,7 +19,7 @@ const ApartmentDetails = (props: any) => {
   return (
     <Card title={name}>
       <Row gutter={[16,16]}>
-        <Col span={12}>
+        <Col sm={24} md={12} >
           <p>
             <strong>Description:</strong> {description}
           </p>
@@ -50,7 +50,7 @@ const ApartmentDetails = (props: any) => {
             <strong>Available:</strong> {available ? "Yes" : "No"}
           </p>
         </Col>
-        <Col span={12}>
+        <Col sm={24} md={12}>
           <p>
             <strong>Photos:</strong>
           </p>
