@@ -37,10 +37,10 @@ export default function Home() {
       ) : isLoading ? (
         <h2>Still loading...</h2>
       ) : data ? (
-        <Row>
+        <Row gutter={[16, 16]}>
           {data.map((apartment) => {
             return (
-              <Col span={8}>
+              <Col xs={24} sm={12} md={8}>
                 <ApartmentCard apartment={apartment}></ApartmentCard>
               </Col>
             );
