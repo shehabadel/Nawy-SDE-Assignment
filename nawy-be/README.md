@@ -31,31 +31,21 @@
 ```bash
 $ npm install
 ```
+## Configuration
+1. Create a `.env` file to add the port and MongoDB URL environment variables
+2. Check `.env.template` on how the environment variables are named
+3. They must look like this
 
+```
+PORT = 3000
+MONGODB= "mongodb://127.0.0.1:27017/nawy"
+```   
 ## Running the app
 
-```bash
-# development
-$ npm run start
-
-# watch mode
+### watch mode
+```
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support
