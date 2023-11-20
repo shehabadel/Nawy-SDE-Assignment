@@ -5,6 +5,7 @@ import { UpdateApartmentDto } from './dto/update-apartment.dto';
 
 @Controller('apartments')
 export class ApartmentsController {
+  //Injecting the ApartmentsService
   constructor(private readonly apartmentsService: ApartmentsService) {}
 
   @Post()

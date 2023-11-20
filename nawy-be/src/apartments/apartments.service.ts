@@ -6,6 +6,7 @@ import { ApartmentRepository } from '../database/models/apartment/apartment.repo
 @Injectable()
 export class ApartmentsService {
   constructor(
+    //Injecting the ApartmentRepository
     private apartmentRepository:ApartmentRepository
   ){}
   async create(createApartmentDto: CreateApartmentDto) {
