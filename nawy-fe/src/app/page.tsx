@@ -9,8 +9,9 @@ export default function Home() {
   const [isError, setIsError] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
+      const endpoint = process.env.BACKEND_URI || "http://localhost:3000/apartments";
       setIsLoading(true)
-      const response = await axios.get("http://localhost:3000/apartments");
+      const response = await axios.get(endpoint);
       if (response.status !== 200) {
         setIsError(true);
       } else {
