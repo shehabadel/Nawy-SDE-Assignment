@@ -18,8 +18,8 @@ const ApartmentDetails = (props: any) => {
 
   return (
     <Card title={name}>
-      <Row gutter={[16,16]}>
-        <Col sm={24} md={12} >
+      <Row gutter={[16, 16]}>
+        <Col sm={24} md={12}>
           <p>
             <strong>Description:</strong> {description}
           </p>
@@ -54,14 +54,20 @@ const ApartmentDetails = (props: any) => {
           <p>
             <strong>Photos:</strong>
           </p>
-          <Row>
-            {photos && (
-                photos.map((photo:any, index:number)=>{
-              <Col key={name} span={12}>
-                <Image src={photo} alt={`Photo ${index}`} />
-              </Col>
-                })
-            )}
+          <Row gutter={[16, 16]}>
+            {photos &&
+              photos.map((photo: any, index: number) => {
+                return (
+                  <Col key={index} sm={6}>
+                    <Image
+                      src={photo}
+                      alt={`Photo ${index}`}
+                      width={100}
+                      height={100}
+                    />
+                  </Col>
+                );
+              })}
           </Row>
         </Col>
       </Row>
