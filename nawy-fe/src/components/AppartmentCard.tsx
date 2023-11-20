@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Row, Col, Tag, Image } from "antd";
-import { Apartment } from "@/interfaces/apartment";
-const ApartmentCard = (props:any) => {
-    const {apartment}=props;
+
+const ApartmentCard = (props: any) => {
+  const { apartment } = props;
   const {
     id,
     name,
