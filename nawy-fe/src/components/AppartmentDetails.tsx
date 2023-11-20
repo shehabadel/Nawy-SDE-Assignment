@@ -1,11 +1,9 @@
 import React from "react";
 import { Card, Row, Col, Tag, Image } from "antd";
-import Link from "next/link";
 
-const ApartmentCard = (props: any) => {
+const ApartmentDetails = (props: any) => {
   const { apartment } = props;
   const {
-    _id,
     name,
     description,
     location,
@@ -19,9 +17,8 @@ const ApartmentCard = (props: any) => {
   } = apartment;
 
   return (
-    <Link href={`/apartments/${_id}`}>
     <Card title={name}>
-      <Row>
+      <Row gutter={[16,16]}>
         <Col span={12}>
           <p>
             <strong>Description:</strong> {description}
@@ -59,16 +56,17 @@ const ApartmentCard = (props: any) => {
           </p>
           <Row>
             {photos && (
+                photos.map((photo:any, index:number)=>{
               <Col key={name} span={12}>
-                <Image src={photos[0]} alt={`Photo ${_id}`} />
+                <Image src={photo} alt={`Photo ${index}`} />
               </Col>
+                })
             )}
           </Row>
         </Col>
       </Row>
     </Card>
-    </Link>
   );
 };
 
-export default ApartmentCard;
+export default ApartmentDetails;
